@@ -5,13 +5,23 @@
 
 	<modelVersion>4.0.0</modelVersion>
 
-	<artifactId>cf-helloworld-server</artifactId>
+	<!--<artifactId>cf-helloworld-server</artifactId>-->
+	<artifactId>dcaf-java</artifactId>
 	<packaging>jar</packaging>
 
 	<name>Cf-HelloWorldServer</name>
 	<description>Californium (Cf) simple server example</description>
-	<groupId>com.test</groupId>
+	<!--<groupId>com.test</groupId>-->
+	<groupId>shoeper</groupId>
 	<version>9000</version>
+
+	<url>https://github.com/shoeper/dcaf-java</url>
+
+	<scm>
+		<connection>scm:git:git@github.com:shoeper/dcaf-java.git</connection>
+		<developerConnection>scm:git:git@github.com:shoeper/dcaf-java.git</developerConnection>
+		<url>https://github.com/shoeper/dcaf-java</url>
+	</scm>
 	
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -20,6 +30,7 @@
 		<powermock.version>1.7.0RC2</powermock.version>
 		<slf4j.version>1.7.25</slf4j.version>
 		<logback.version>1.2.3</logback.version>
+		<jackson.version>2.9.7</jackson.version>
   	</properties>
 
 	<dependencies>
@@ -36,22 +47,22 @@
 		<dependency>
 			<groupId>com.fasterxml.jackson.core</groupId>
 			<artifactId>jackson-annotations</artifactId>
-			<version>2.9.7</version>
+			<version>${jackson.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>com.fasterxml.jackson.core</groupId>
 			<artifactId>jackson-core</artifactId>
-			<version>2.9.7</version>
+			<version>${jackson.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>com.fasterxml.jackson.core</groupId>
 			<artifactId>jackson-databind</artifactId>
-			<version>2.9.7</version>
+			<version>${jackson.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>com.fasterxml.jackson.dataformat</groupId>
 			<artifactId>jackson-dataformat-cbor</artifactId>
-			<version>2.9.7</version>
+			<version>${jackson.version}</version>
 		</dependency>                       
 		<dependency>
 			<groupId>junit</groupId>

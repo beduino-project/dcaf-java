@@ -7,10 +7,8 @@ addons:
     branches:
      - master
 script:
-#    - mvn dependency:copy-dependencies
     - mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent install -Dmaven.test.failure.ignore=true
     - mvn test -B
-#    - mvn jacoco:report -B
-    - sonar-scanner
+    - mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent package sonar:sonar
 # reference https://docs.travis-ci.com/user/sonarqube/
 # reference https://docs.travis-ci.com/user/languages/java/
