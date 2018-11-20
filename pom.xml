@@ -143,6 +143,32 @@
 					</execution>
 				</executions>
 			</plugin>
+			<plugin>
+				<groupId>org.owasp</groupId>
+				<artifactId>dependency-check-maven</artifactId>
+				<version>3.3.4</version>
+				<configuration>
+					<failBuildOnCVSS>8</failBuildOnCVSS>
+					<!--<suppressionFiles>
+						<suppressionFile>http://example.org/suppression.xml</suppressionFile>
+						<suppressionFile>project-suppression.xml</suppressionFile>
+					</suppressionFiles>-->
+				</configuration>
+				<executions>
+					<execution>
+						<goals>
+							<goal>check</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<!-- Part of Maven - specified version explicitly for compatibility
+     				with the maven-project-info-reports-plugin 3.0.0-->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-site-plugin</artifactId>
+				<version>3.7.1</version>
+			</plugin>
 		</plugins>
 	</build>
 
@@ -156,6 +182,28 @@
 						<reports>
 							<!-- select non-aggregate reports -->
 							<report>report</report>
+						</reports>
+					</reportSet>
+				</reportSets>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-site-plugin</artifactId>
+				<version>3.7.1</version>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-project-info-reports-plugin</artifactId>
+				<version>3.0.0</version>
+			</plugin>
+			<plugin>
+				<groupId>org.owasp</groupId>
+				<artifactId>dependency-check-maven</artifactId>
+				<version>3.3.4</version>
+				<reportSets>
+					<reportSet>
+						<reports>
+							<report>aggregate</report>
 						</reports>
 					</reportSet>
 				</reportSets>
